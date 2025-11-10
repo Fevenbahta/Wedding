@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 28 60% 97%;
+    --foreground: 28 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 28 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 28 30% 15%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 80% 75%;
+    --secondary-foreground: 28 30% 15%;
+
+    --muted: 28 40% 92%;
+    --muted-foreground: 28 20% 45%;
+
+    --accent: 38 100% 65%;
+    --accent-foreground: 28 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 28 30% 88%;
+    --input: 28 30% 88%;
+    --ring: 38 92% 50%;
+
+    --radius: 1rem;
+
+    /* Wedding theme colors */
+    --gold: 38 92% 50%;
+    --gold-light: 38 100% 65%;
+    --gold-dark: 38 80% 40%;
+    --peach: 15 80% 75%;
+    --peach-light: 15 90% 85%;
+    --rose: 350 75% 80%;
+    --cream: 28 60% 97%;
+    
+    /* Gradients */
+    --gradient-gold: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(38 100% 65%) 100%);
+    --gradient-peach: linear-gradient(135deg, hsl(15 80% 75%) 0%, hsl(350 75% 80%) 100%);
+    --gradient-romantic: linear-gradient(135deg, hsl(38 100% 65%) 0%, hsl(15 80% 75%) 50%, hsl(350 75% 80%) 100%);
+    
+    /* Effects */
+    --shimmer: 0 0 40px hsl(38 92% 50% / 0.3);
+    --glow-soft: 0 4px 20px hsl(38 92% 50% / 0.15);
+    --shadow-elegant: 0 8px 30px hsl(28 30% 15% / 0.08);
+  }
+
+  .dark {
+    --background: 28 30% 8%;
+    --foreground: 28 20% 95%;
+
+    --card: 28 25% 12%;
+    --card-foreground: 28 20% 95%;
+
+    --popover: 28 25% 12%;
+    --popover-foreground: 28 20% 95%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 15 60% 45%;
+    --secondary-foreground: 28 20% 95%;
+
+    --muted: 28 20% 20%;
+    --muted-foreground: 28 15% 60%;
+
+    --accent: 38 80% 55%;
+    --accent-foreground: 28 20% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 28 20% 95%;
+
+    --border: 28 20% 20%;
+    --input: 28 20% 20%;
+    --ring: 38 92% 50%;
+    
+    --gold: 38 92% 55%;
+    --gold-light: 38 100% 70%;
+    --gold-dark: 38 70% 35%;
+    --peach: 15 70% 60%;
+    --peach-light: 15 80% 70%;
+    --rose: 350 65% 65%;
+    --cream: 28 30% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .shimmer {
+    box-shadow: var(--shimmer);
+  }
+  
+  .glow-soft {
+    box-shadow: var(--glow-soft);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .bg-gradient-gold {
+    background: var(--gradient-gold);
+  }
+  
+  .bg-gradient-peach {
+    background: var(--gradient-peach);
+  }
+  
+  .bg-gradient-romantic {
+    background: var(--gradient-romantic);
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes shimmer-slide {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(38 92% 50% / 0.3), transparent);
+    background-size: 1000px 100%;
+    animation: shimmer-slide 3s infinite;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+}
