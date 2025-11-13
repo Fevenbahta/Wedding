@@ -46,7 +46,7 @@ const Navigation = () => {
           >
             <Heart className="w-6 h-6 text-gold group-hover:scale-110 transition-transform" fill="currentColor" />
             <span className="text-xl font-serif font-bold text-foreground">
-              F <span className="text-gold">&</span> N
+              N <span className="text-gold">&</span> F
             </span>
           </button>
 

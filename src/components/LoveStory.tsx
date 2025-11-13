@@ -1,5 +1,5 @@
 import { Heart, Sparkles, Star } from "lucide-react";
-import loveStoryBg from "@/assets/love-story-bg.jpg";
+import loveStoryBg from "@/assets/love-story-bg.webp";
 
 const LoveStory = () => {
   return (
@@ -48,7 +48,7 @@ const LoveStory = () => {
               </h3>
             </div>
             <p className="text-lg font-elegant text-foreground/90 leading-relaxed">
-              Our story began like a scene from a fairytale, when Feven and Natnael's paths crossed 
+              Our story began like a scene from a fairytale, when Natnael & Feven's paths crossed 
               for the first time. What started as a chance encounter quickly blossomed into something 
               magical. From the very first conversation, there was an undeniable connection—a spark 
               that would light the way to forever.
@@ -64,7 +64,7 @@ const LoveStory = () => {
               </h3>
             </div>
             <p className="text-lg font-elegant text-foreground/90 leading-relaxed">
-              Through shared dreams, laughter, and countless precious moments, Feven and Natnael's 
+              Through shared dreams, laughter, and countless precious moments, Natnael & Feven's 
               love grew stronger with each passing day. They discovered in each other a best friend, 
               a confidant, and a soulmate. Together, they navigated life's journey, supporting each 
               other through every challenge and celebrating every triumph.
@@ -80,7 +80,7 @@ const LoveStory = () => {
               </h3>
             </div>
             <p className="text-lg font-elegant text-foreground/90 leading-relaxed">
-              Now, as they prepare to say "I do," Feven and Natnael are ready to embark on their 
+              Now, as they prepare to say "I do," Natnael & Feven are ready to embark on their 
               greatest adventure yet—a lifetime of love, companionship, and endless possibilities. 
               Their love story continues to inspire everyone around them, proving that true love is 
               not just found in fairytales, but in the beautiful reality they've created together.

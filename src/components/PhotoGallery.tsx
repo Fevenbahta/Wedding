@@ -1,53 +1,53 @@
 import { useState } from "react";
 import { X } from "lucide-react";
-import engagement1 from "@/assets/engagement-1.jpg";
-import engagement2 from "@/assets/engagement-2.jpg";
-import engagement3 from "@/assets/engagement-3.jpg";
-import engagement4 from "@/assets/engagement-4.jpg";
-import memories1 from "@/assets/memories-1.jpg";
-import memories2 from "@/assets/memories-2.jpg";
-import memories3 from "@/assets/memories-3.jpg";
-import memories4 from "@/assets/memories-4.jpg";
-import couple1 from "@/assets/couple-1.jpg";
-import couple2 from "@/assets/couple-2.jpg";
-import couple3 from "@/assets/couple-3.jpg";
-import couple4 from "@/assets/couple-4.jpg";
-import celebration1 from "@/assets/celebration-1.jpg";
-import celebration2 from "@/assets/celebration-2.jpg";
-import celebration3 from "@/assets/celebration-3.jpg";
-import celebration4 from "@/assets/celebration-4.jpg";
-import journey1 from "@/assets/journey-1.jpg";
-import journey2 from "@/assets/journey-2.jpg";
-import journey3 from "@/assets/journey-3.jpg";
-import journey4 from "@/assets/journey-4.jpg";
+import engagement1 from "@/assets/engagement-1.webp";
+import engagement2 from "@/assets/engagement-2.webp";
+import engagement3 from "@/assets/engagement-3.webp";
+import engagement4 from "@/assets/engagement-4.webp";
+import memories1 from "@/assets/memories-1.webp";
+import memories2 from "@/assets/memories-2.webp";
+import memories3 from "@/assets/memories-3.webp";
+import memories4 from "@/assets/memories-4.webp";
+import couple1 from "@/assets/couple-1.webp";
+import couple2 from "@/assets/couple-2.webp";
+import couple3 from "@/assets/couple-3.webp";
+import couple4 from "@/assets/couple-4.webp";
+import celebration1 from "@/assets/celebration-1.webp";
+import celebration2 from "@/assets/celebration-2.webp";
+import celebration3 from "@/assets/celebration-3.webp";
+import celebration4 from "@/assets/celebration-4.webp";
+import journey1 from "@/assets/journey-1.webp";
+import journey2 from "@/assets/journey-2.webp";
+import journey3 from "@/assets/journey-3.webp";
+import journey4 from "@/assets/journey-4.webp";
 
 interface Gallery {
   title: string;
   photos: string[];
 }
-
 const galleries: Gallery[] = [
   {
-    title: "Engagement",
+    title: "A Love Story",
     photos: [engagement1, engagement2, engagement3, engagement4],
   },
   {
-    title: "Memories",
+    title: "Pre-Wedding Moments",
     photos: [memories1, memories2, memories3, memories4],
   },
   {
-    title: "Couple",
+    title: "The Couple",
     photos: [couple1, couple2, couple3, couple4],
   },
   {
-    title: "Celebration",
+    title: "Before the Vows",
     photos: [celebration1, celebration2, celebration3, celebration4],
   },
   {
-    title: "Journey",
+    title: "Promise of Forever",
     photos: [journey1, journey2, journey3, journey4],
   },
 ];
+
 
 const PhotoGallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);

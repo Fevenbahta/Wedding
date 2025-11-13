@@ -1,5 +1,5 @@
 import { Heart } from "lucide-react";
-import heroImage from "@/assets/hero-couple.jpg";
+import heroImage from "@/assets/hero-couple.webp";
 
 const Hero = () => {
   return (
@@ -32,7 +32,7 @@ const Hero = () => {
         </div>
         
         <h1 className="text-6xl md:text-8xl font-serif font-bold mb-6 text-foreground">
-          Feven <span className="text-gold">&</span> Natnael
+          Natnael <span className="text-gold">&</span> Feven
         </h1>
         
         <div className="h-1 w-32 bg-gradient-gold mx-auto mb-6 shimmer"></div>

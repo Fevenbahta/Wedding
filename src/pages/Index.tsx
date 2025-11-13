@@ -10,10 +10,11 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <Hero />
+      <Hero /> 
+      <SaveTheDate />
       <PhotoGallery />
       <LoveStory />
-      <SaveTheDate />
+     
       <WishesForm />
       <Footer />
     </div>

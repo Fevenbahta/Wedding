@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Calendar, MapPin } from "lucide-react";
 
 const SaveTheDate = () => {
-  const targetDate = new Date("2025-11-17T00:00:00");
+  const targetDate = new Date("2025-11-16T00:00:00");
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -79,7 +79,7 @@ const SaveTheDate = () => {
           </div>
           
           <h3 className="text-4xl md:text-5xl font-serif font-bold   text-foreground mb-2">
-            November 17, 2025
+            November 16, 2025
           </h3>
         </div>
 

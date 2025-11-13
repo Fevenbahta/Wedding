@@ -38,7 +38,7 @@ const WishesForm = () => {
         from_name: name,
         from_email: email,
         message: message,
-        to_email: 'fevenbahta994@gmail.com',
+        to_email: 'fevennigussie8892@gmail.com',
       };
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
@@ -46,7 +46,7 @@ const WishesForm = () => {
       setIsSubmitted(true);
       toast({
         title: "Wishes sent successfully!",
-        description: "Thank you for your heartfelt message. Feven & Natnael will cherish it!",
+        description: "Thank you for your heartfelt message. Natnael & Feven will cherish it!",
       });
       
       // Reset form
@@ -59,7 +59,7 @@ const WishesForm = () => {
       console.error('EmailJS Error:', error);
       toast({
         title: "Failed to send wishes",
-        description: "Please try again or contact us directly at fevenbahta994@gmail.com",
+        description: "Please try again or contact us directly at fevennigussie8892@gmail.com",
         variant: "destructive",
       });
     } finally {
@@ -102,7 +102,7 @@ const WishesForm = () => {
                 Thank You!
               </h3>
               <p className="text-lg font-elegant text-foreground/80">
-                Your heartfelt wishes have been sent to Feven and Natnael.
+                Your heartfelt wishes have been sent to Natnael & Feven.
                 They will treasure your message!
               </p>
             </div>
@@ -175,8 +175,8 @@ const WishesForm = () => {
 
         <p className="text-center mt-8 text-sm font-elegant text-muted-foreground animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
           Your wishes will be sent directly to{" "}
-          <a href="mailto:fevenbahta994@gmail.com" className="text-gold hover:underline">
-            fevenbahta994@gmail.com
+          <a href="mailto:fevennigussie8892@gmail.com" className="text-gold hover:underline">
+            fevennigussie8892@gmail.com
           </a>
         </p>
       </div>

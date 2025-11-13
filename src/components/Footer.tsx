@@ -18,11 +18,11 @@ const Footer = () => {
         </div>
         
         <h3 className="text-2xl md:text-3xl font-serif font-bold text-foreground mb-2">
-          Feven & Natnael
+          Natnael & Feven
         </h3>
         
         <p className="text-lg font-elegant text-muted-foreground mb-6">
-          November 17, 2025 • Nazret, Ethiopia
+          November 16, 2025 • Nazret, Ethiopia
         </p>
         
         <div className="h-px w-32 bg-gradient-gold mx-auto mb-6"></div>
@@ -32,7 +32,7 @@ const Footer = () => {
         </p>
         
         <p className="text-xs font-elegant text-muted-foreground/60 mt-4">
-          © 2025 Feven & Natnael. All rights reserved.
+          © 2025 Natnael & Feven. All rights reserved.
         </p>
       </div>
     </footer>
