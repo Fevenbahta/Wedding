@@ -37,13 +37,17 @@ const Hero = () => {
         
         <div className="h-1 w-32 bg-gradient-gold mx-auto mb-6 shimmer"></div>
         
-        <p className="text-2xl md:text-3xl font-elegant text-foreground/90 mb-8">
+        {/* <p className="text-2xl md:text-3xl text-white font-elegant text-foreground/90 mb-8">
           Our Love Story
-        </p>
-        
-        <p className="text-lg md:text-xl text-muted-foreground font-elegant max-w-2xl mx-auto">
-          Join us as we celebrate our journey of love and commitment
-        </p>
+        </p> */}
+       <div className="text-center mt-16">
+          <div className="rounded-2xl text-white p-8 max-w-2xl mx-auto border border-gold/10">
+            <p className="text-3xl text-foreground/80  text-white font-elegant leading-relaxed">
+              "With hearts full of love and gratitude, we invite you to share in our joy 
+              as we begin our forever together in the beautiful city of Nazret."
+            </p>
+          </div>
+        </div>
         
         {/* Decorative Elements */}
         <div className="absolute top-1/4 left-10 md:left-20 animate-float" style={{ animationDelay: '1s' }}>
