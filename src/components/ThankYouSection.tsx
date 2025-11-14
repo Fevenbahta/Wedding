@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Send, Heart, CheckCircle, Camera, Star, Shirt } from "lucide-react";
+import { Send, Heart, CheckCircle, Camera, Star, Shirt, ExternalLink, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,10 +15,52 @@ const ThankYouSection = () => {
   const { toast } = useToast();
 
   const creativeTeam = [
-    { name: "Miss Shiqirqir", role: "Bridal Dress Designer", icon: Shirt },
-    { name: "Ng Pictures", role: "Portrait Photography", icon: Camera },
-    { name: "Eyeta Pictures", role: "Candid Photography", icon: Camera },
-    { name: "Eyob Pictures", role: "Event Photography", icon: Camera }
+    { 
+      name: "Miss Shiqirqir", 
+      role: "Bridal Dress Designer", 
+      icon: Shirt,
+      links: [
+        { 
+          platform: "TikTok", 
+          url: "https://www.tiktok.com/@miss_shiqirqir?_r=1&_t=ZM-91OCMmAjmNk",
+          icon: "🎵"
+        },
+        { 
+          platform: "Instagram", 
+          url: "https://www.instagram.com/miss_shiqirqir?igsh=Mm13eDlmdWt0d3Vw",
+          icon: "📷"
+        }
+      ]
+    },
+    { 
+      name: "Ng Pictures", 
+      role: "Portrait Photography", 
+      icon: Camera,
+      links: [
+        { 
+          platform: "TikTok", 
+          url: "https://www.tiktok.com/@natigezahegn?_t=ZS-90LRCdqKvG4&_r=1",
+          icon: "🎵"
+        },
+        { 
+          platform: "Instagram", 
+          url: "https://www.instagram.com/_ng_pictures?utm_source=qr&igsh=eTd3Z3BocXZpajFp",
+          icon: "📷"
+        }
+      ]
+    },
+    { 
+      name: "Eyeta Pictures", 
+      role: "Candid Photography", 
+      icon: Camera,
+      links: []
+    },
+    { 
+      name: "Eyob Pictures", 
+      role: "Event Photography", 
+      icon: Camera,
+      links: []
+    }
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -72,6 +114,34 @@ const ThankYouSection = () => {
     }
   };
 
+  // Social Media Icon Component
+  const SocialIcon = ({ platform, url, emoji }: { platform: string; url: string; emoji: string }) => (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group relative flex items-center justify-center p-3 bg-gradient-to-br from-gold/20 to-gold/10 border border-gold/30 rounded-xl hover:from-gold/30 hover:to-gold/20 hover:border-gold/50 hover:shadow-lg hover:shadow-gold/20 transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+      title={`Visit on ${platform}`}
+    >
+      {/* Background Glow Effect */}
+      <div className="absolute inset-0 bg-gold/5 rounded-xl group-hover:bg-gold/10 transition-colors duration-300"></div>
+      
+      {/* Animated Border */}
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-gold/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-300"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center gap-1">
+        <span className="text-lg font-medium">{emoji}</span>
+        <span className="text-xs font-elegant text-foreground/70 group-hover:text-foreground transition-colors">
+          {platform}
+        </span>
+      </div>
+      
+      {/* External Link Indicator */}
+      <ExternalLink className="absolute top-1 right-1 w-3 h-3 text-gold/60 group-hover:text-gold group-hover:scale-110 transition-all duration-300" />
+    </a>
+  );
+
   return (
     <section className="py-20 px-4 relative overflow-hidden" id="thank-you">
       {/* Background Elements */}
@@ -110,26 +180,59 @@ const ThankYouSection = () => {
             Special Thanks To
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {creativeTeam.map((member, index) => {
               const IconComponent = member.icon;
               return (
                 <div 
                   key={index}
-                  className="bg-background/40 backdrop-blur-sm rounded-2xl p-6 text-center border border-gold/20 hover:border-gold/40 transition-all duration-500 hover:scale-105 group"
+                  className="group relative bg-background/40 backdrop-blur-sm rounded-2xl p-6 border border-gold/20 hover:border-gold/40 transition-all duration-500 hover:scale-105"
                 >
-                  <div className="w-16 h-16 mx-auto mb-4 bg-gold/10 rounded-full flex items-center justify-center group-hover:bg-gold/20 transition-colors">
-                    <IconComponent className="w-8 h-8 text-gold" />
+                  {/* Main Content */}
+                  <div className="text-center mb-4">
+                    <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-gold/10 to-gold/5 rounded-2xl flex items-center justify-center group-hover:from-gold/20 group-hover:to-gold/10 transition-all duration-300 group-hover:scale-110">
+                      <IconComponent className="w-10 h-10 text-gold" />
+                    </div>
+                    <h4 className="text-xl font-serif text-foreground mb-2 group-hover:text-gold transition-colors">
+                      {member.name}
+                    </h4>
+                    <p className="text-foreground/70 font-elegant text-sm">
+                      {member.role}
+                    </p>
                   </div>
-                  <h4 className="text-xl font-serif text-foreground mb-2 group-hover:text-gold transition-colors">
-                    {member.name}
-                  </h4>
-                  <p className="text-foreground/70 font-elegant text-sm">
-                    {member.role}
-                  </p>
+                  
+                  {/* Social Media Links */}
+                  {member.links.length > 0 && (
+                    <div className="space-y-3 mt-6">
+                      <p className="text-xs font-elegant text-foreground/60 text-center uppercase tracking-wider">
+                        Follow Their Work
+                      </p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {member.links.map((link, linkIndex) => (
+                          <SocialIcon
+                            key={linkIndex}
+                            platform={link.platform}
+                            url={link.url}
+                            emoji={link.icon}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}
+          </div>
+
+          {/* Links Description */}
+          <div className="text-center mt-12 bg-background/30 backdrop-blur-sm rounded-2xl p-6 border border-gold/10 max-w-md mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-3">
+              <ExternalLink className="w-5 h-5 text-gold animate-pulse" />
+              <span className="font-elegant text-foreground/80">Click to explore their work</span>
+            </div>
+            <p className="text-sm text-foreground/60 font-elegant">
+              Discover more beautiful creations from our talented team
+            </p>
           </div>
         </div>
 
@@ -170,7 +273,7 @@ const ThankYouSection = () => {
                     placeholder="Enter your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="border-gold/20 focus:border-gold bg-background/50 text-lg font-elegant"
+                    className="border-gold/20 focus:border-gold bg-background/50 text-lg font-elegant hover:border-gold/30 transition-colors duration-300"
                     required
                   />
                 </div>
@@ -185,7 +288,7 @@ const ThankYouSection = () => {
                     placeholder="your.email@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="border-gold/20 focus:border-gold bg-background/50 text-lg font-elegant"
+                    className="border-gold/20 focus:border-gold bg-background/50 text-lg font-elegant hover:border-gold/30 transition-colors duration-300"
                     required
                   />
                 </div>
@@ -199,7 +302,7 @@ const ThankYouSection = () => {
                     placeholder="Share your wishes and blessings for the couple..."
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="border-gold/20 focus:border-gold bg-background/50 min-h-[150px] text-lg font-elegant resize-none"
+                    className="border-gold/20 focus:border-gold bg-background/50 min-h-[150px] text-lg font-elegant resize-none hover:border-gold/30 transition-colors duration-300"
                     required
                   />
                 </div>
@@ -207,7 +310,7 @@ const ThankYouSection = () => {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-gold hover:opacity-90 text-white text-lg py-6 rounded-xl font-elegant uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_30px_hsl(38_92%_50%/0.5)] disabled:opacity-50"
+                  className="w-full bg-gradient-gold hover:opacity-90 text-white text-lg py-6 rounded-xl font-elegant uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_40px_hsl(38_92%_50%/0.6)] disabled:opacity-50 hover:scale-[1.02] active:scale-[0.98]"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center gap-2">
@@ -227,7 +330,7 @@ const ThankYouSection = () => {
 
           <p className="text-center mt-8 text-sm font-elegant text-muted-foreground animate-fadeInUp" style={{ animationDelay: '0.8s' }}>
             Your wishes will be sent directly to{" "}
-            <a href="mailto:fevennigussie8892@gmail.com" className="text-gold hover:underline">
+            <a href="mailto:fevennigussie8892@gmail.com" className="text-gold hover:underline font-semibold transition-all duration-300 hover:text-gold-dark">
               fevennigussie8892@gmail.com
             </a>
           </p>
@@ -235,7 +338,7 @@ const ThankYouSection = () => {
 
         {/* Final Thank You Message */}
         <div className="text-center mt-16 animate-fadeInUp" style={{ animationDelay: '1s' }}>
-          <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto border border-gold/10">
+          <div className="bg-background/40 backdrop-blur-sm rounded-2xl p-8 max-w-2xl mx-auto border border-gold/10 hover:border-gold/20 transition-all duration-500 hover:scale-[1.02]">
             <p className="text-xl md:text-2xl font-elegant text-foreground/80 leading-relaxed italic">
               "Thank you for being part of our special day and for all the love and support 
               that has brought us to this beautiful moment in our lives."
